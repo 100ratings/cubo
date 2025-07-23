@@ -1,231 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
-  <title>Top Listas por Categoria</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/100ratings/top/main/star.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cubing Rocks</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
   <style>
     body {
-      margin: 0;
-      background: #f5f5f5;
-      font-family: 'Source Sans Pro', sans-serif;
-      color: #333;
+      font-family: Helvetica, Arial, sans-serif;
+      background: #fff;
+      color: #222;
+      padding: 20px;
+      line-height: 1.5;
+    }
+    h1, h2 {
+      color: crimson;
+    }
+    .embed-container {
       position: relative;
-      min-height: 100vh;
-      padding-bottom: 30px;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
     }
-
-    #header {
-      background: #2c99c4;
-      color: white;
-      padding: 12px 0;
+    .embed-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
     }
-
-    #header .inner {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 12px;
+    img {
+      max-width: 100%;
+      height: auto;
     }
-
-    #header .title {
-      font-size: 1.2em;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    #header .home-icon {
-      color: white;
-      font-size: 1.4em;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    #header .home-icon:hover {
-      opacity: 0.75;
-    }
-
-    #content {
-      padding: 30px 10px;
-    }
-
-    #content .inner {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    #blocks {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .block {
-      display: flex;
-      align-items: center;
-      background: #fff;
-      border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-    }
-
-    .firstdetails h2 {
-      margin: 0 0 5px 0;
-      font-size: 1.5em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .firstdetails p {
-      margin: 0;
-      font-size: 0.95em;
-      color: #777777;
-    }
-
-    .firstdetails i.fa-star {
-      color: #000;
-      font-size: 1.2em;
-    }
-
-    .selectblock {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #fff;
-      border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      color: #333;
-      padding: 15px;
-      transition: background 0.2s ease, transform 0.1s ease;
-    }
-
-    .selectblock:first-of-type {
-      margin-top: 10px;
-    }
-
-    .selectblock:hover {
-      background: #f0f0f0;
-    }
-
-    .selectblock:active {
-      transform: translateX(2px);
-    }
-
-    .selectblock .left {
-      display: flex;
-      align-items: center;
-    }
-
-    .selectblock .icon {
-      font-size: 1.6em;
-      margin-right: 12px;
-      color: #000;
-    }
-
-    .selectblock span {
-      font-size: 1.1em;
-    }
-
-    .selectblock .right {
-      font-size: 1.1em;
-      color: #aaa;
-    }
-
-    #footer {
-      max-width: 600px;
-      margin: 20px auto 5px auto;
-      text-align: center;
-      font-size: 0.85em;
-      color: #666;
-      padding: 0 10px;
+    hr {
+      margin: 40px 0;
     }
   </style>
 </head>
 <body>
-  <div id="header">
-    <div class="inner">
-      <div class="title">
-        <i class="fas fa-home home-icon"></i>
-        Top Listas
-      </div>
-    </div>
+
+  <h1>Cubing Rocks!</h1>
+  <p>Notícias, métodos e curiosidades sobre o Cubo Mágico</p>
+
+  <hr>
+
+  <h2>25 fatos incríveis sobre o Cubo Mágico</h2>
+  <p>Listas com esse tipo de título são bem populares, especialmente no YouTube. Aqui está a nossa sobre o quebra-cabeça mais famoso do mundo.</p>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/9aw0dI6v-NA' frameborder='0' allowfullscreen></iframe>
   </div>
 
-  <div id="content">
-    <div class="inner">
-      <div id="blocks">
-        <div class="block">
-          <div class="firstdetails">
-            <h2><i class="fas fa-star"></i>Top Listas por Categoria</h2>
-            <p>Listas organizadas por tema com sugestões e conteúdos variados.</p>
-          </div>
-        </div>
+  <hr>
 
-        <a href="https://tinyhost.pw/list/s32vz5JVg/CM6U6Lx9eDQ1" class="selectblock" title="Nomes próprios masculinos variados">
-          <div class="left"><i class="fas fa-male icon"></i><span>Nomes Masculinos</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
+  <h2>Empresa perde marca registrada do Cubo na UE</h2>
+  <p>Em 2017, a União Europeia revogou a proteção da forma do Cubo Mágico, alegando que seu formato é funcional e não pode ser registrado.</p>
+  <img src="img/skynews-rubiks-cube_4814626.jpg" alt="Notícia sobre Rubik's Cube">
 
-        <a href="https://tinyhost.pw/list/JbEOC9haJ/CM6U6Lx9eDQ1" class="selectblock" title="Nomes próprios femininos variados">
-          <div class="left"><i class="fas fa-female icon"></i><span>Nomes Femininos</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
+  <hr>
 
-        <a href="https://tinyhost.pw/list/aoYABcqAD/CM6U6Lx9eDQ1" class="selectblock" title="Músicas inesquecíveis com impacto duradouro">
-          <div class="left"><i class="fas fa-music icon"></i><span>Músicas Inesquecíveis</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
-        
-        <a href="https://tinyhost.pw/list/LkNOVX6Lw/CM6U6Lx9eDQ1" class="selectblock" title="Previsões astrológicas do dia">
-          <div class="left"><i class="fas fa-moon icon"></i><span>Horóscopo Diário</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
+  <h2>O fato mais incrível sobre o Cubo Mágico</h2>
+  <p>Se você misturar um cubo com pelo menos 20 movimentos, a chance de criar uma combinação que <strong>nunca existiu antes</strong> é maior que <strong>99.999999%</strong>.</p>
+  <p>Existem mais de <strong>43 quintilhões</strong> de combinações possíveis. Se cada pessoa na Terra tivesse 6 bilhões de cubos, ainda assim não existiriam dois iguais.</p>
+  <img src="gallery/dummy.png" alt="Cubo embaralhado">
 
-        <a href="https://tinyhost.pw/list/FmE3h5yLZ/CM6U6Lx9eDQ1" class="selectblock" title="Sugestões de filmes para assistir">
-          <div class="left"><i class="fas fa-film icon"></i><span>Filmes</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
+  <hr>
 
-        <a href="https://tinyhost.pw/list/pWsBhCSrw/CM6U6Lx9eDQ1" class="selectblock" title="Uma celebridade por dia, com foto e data de aniversário.">
-          <div class="left"><i class="fas fa-star icon"></i><span>365 Celebridades</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
-        
-        <a href="https://tinyhost.pw/list/1VovG0CPv/CM6U6Lx9eDQ1" class="selectblock" title="Significados das cartas de baralho e tarô">
-          <div class="left"><i class="fas fa-star-and-crescent icon"></i><span>Cartomancia</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
-
-        <a href="https://tinyhost.pw/list/qhaVxnfY9/CM6U6Lx9eDQ1" class="selectblock" title="Sugestões de nomes para pelúcias e bichinhos">
-          <div class="left"><i class="fas fa-paw icon"></i><span>Nomes de Pelúcia</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
-
-        <a href="https://tinyhost.pw/list/V7i2zWQyA/CM6U6Lx9eDQ1" class="selectblock" title="Os Lugares Mais Lindos do Mundo">
-          <div class="left"><i class="fas fa-globe icon"></i><span>Lugares Mais Lindos</span></div>
-          <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
-
-        <a href="https://tinyhost.pw/list/qsDqKXj9d/CM6U6Lx9eDQ1" class="selectblock" title="Como Aumentar o Sucesso na Transmissão de Símbolos ESP">
-         <div class="left"><i class="fas fa-eye icon"></i><span>Símbolos ESP</span></div>
-         <div class="right"><i class="fas fa-chevron-right"></i></div>
-        </a>
-       
-      </div>
-    </div>
+  <h2>Adolescente resolve 3 Cubos Mágicos ao mesmo tempo</h2>
+  <p>Que Jianyu, da China, estabeleceu um recorde ao resolver três cubos simultaneamente — com mãos e pés — em apenas 1m36s. Também resolveu um cubo pendurado de cabeça para baixo em 15.84s!</p>
+  <div class='embed-container'>
+    <iframe src='https://www.youtube.com/embed/XAoG6l2_Pqc' frameborder='0' allowfullscreen></iframe>
   </div>
 
-  <div id="footer">
-    <p>Última atualização em <script>document.write(new Date().toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric' }));</script></p>
-  </div>
+  <hr>
+
+  <h2>Maior Cubo Mágico do mundo — recorde mundial</h2>
+  <p>Criado por Tony Fisher em 2019, o cubo gigante mede 2,022 metros de lado e funciona exatamente como um cubo normal. A construção levou 330 horas e custou cerca de £2000.</p>
+  <img src="img/guiness.png" alt="Maior cubo do mundo">
+
+  <hr>
+
+  <h2>Mudanças nas regras da World Cube Association</h2>
+  <p>A partir de 1º de janeiro de 2018, cubos com logotipos passaram a ser proibidos em provas de olhos vendados. Outros ajustes incluem inspeção com as mãos em solves com os pés e liberação de cubos “pillowed” em mais categorias.</p>
+  <img src="img/2.jpg" alt="Nova regra WCA">
+
 </body>
 </html>
