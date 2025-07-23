@@ -52,8 +52,7 @@
       var idozito, last_id = 0, last_predimage = '', last_guiness = '';
 
       function autoload() {
-        randomtime = Math.random();
-        document.urlap.submit();
+        frissit(); // Inicia o carregamento sem enviar formulário
       }
 
       function frissit_video() {
@@ -101,13 +100,6 @@
   </head>
 
   <body onload="autoload()">
-    <!-- Formulário desativado (GitHub Pages não roda PHP) -->
-<!--
-<form name="urlap" method="POST" action="index.php">
-  <input type="hidden" name="source" value="3886">
-</form>
--->    </form>
-
     <div id="wrapper" class="blogconn_">
       <section id="main">
         <header>
