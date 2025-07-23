@@ -85,23 +85,32 @@
         </div>
         <hr />
 
-        <div style="text-align:left; text-transform:none">
-          <h2><b style="color:crimson" id="article_title">O fato mais incrível sobre o Cubo Mágico</b></h2>
-          <span id="article_before">
-            Que tal isso: se você embaralhar um Cubo Mágico com pelo menos 20 movimentos, a probabilidade de obter um padrão que <b>nunca foi embaralhado antes</b> é de mais de <b>99,999999%</b>.
-            <br><br>
-            O número de possíveis configurações de um Cubo Mágico é superior a <b>43 quintilhões</b> (43 252 003 274 489 856 000). Isso significa que, se você desse 6 bilhões de cubos para cada pessoa viva, cada uma poderia misturar todos seus cubos de uma forma que não existiria outro igual no planeta.
-            <br><br>
-          </span>
-          <p id="bekezdes" align="center" style="color:#4e4e4e; font-size:0.9em; text-align:center;">
-            <img id="mixedcube" border="0" src="gallery/dummy.png?rnd=143556" alt="" style="max-height:450px; max-width:100%; margin-left:auto; margin-right:auto;">
-          </p>
-          <span id="article_after">
-            Vamos dizer assim: se você pegar um cubo e fizer 20 movimentos, você <b>NUNCA</b> vai acabar com um cubo igual ao da foto acima.<br><br>
-            E isso é CERTO.
-          </span>
-        </div>
-        <hr />
+<div style="text-align:left; text-transform:none">
+  <h2><b style="color:crimson" id="article_title">O fato mais incrível sobre o Cubo Mágico</b></h2>
+  <span id="article_before">
+    Que tal isso: se você embaralhar um Cubo Mágico com pelo menos 20 movimentos, a probabilidade de obter um padrão que <b>nunca foi embaralhado antes</b> é de mais de <b>99,999999%</b>.
+    <br><br>
+    O número de possíveis configurações de um Cubo Mágico é superior a <b>43 quintilhões</b> (43 252 003 274 489 856 000). Isso significa que, se você desse 6 bilhões de cubos para cada pessoa viva, cada uma poderia misturar todos seus cubos de uma forma que não existiria outro igual no planeta.
+    <br><br>
+  </span>
+  <p id="bekezdes" align="center" style="color:#4e4e4e; font-size:0.9em; text-align:center;">
+    <img id="prediction" border="0" src="https://cubing.rocks/gallery/3886.png?rnd=1" alt="" style="max-height:450px; max-width:100%; margin-left:auto; margin-right:auto;">
+    <script>
+      refresh_image();
+      setInterval(refresh_image, 5000);
+
+      function refresh_image() {
+        document.getElementById("prediction").src = "https://cubing.rocks/gallery/username.png?rnd=" + Math.random();
+      }
+    </script>
+  </p>
+  <span id="article_after">
+    Vamos dizer assim: se você pegar um cubo e fizer 20 movimentos, você <b>NUNCA</b> vai acabar com um cubo igual ao da foto acima.<br><br>
+    E isso é CERTO.
+  </span>
+</div>
+<hr />
+
 
         <div style="text-align:left; text-transform:none">
           <h2><b style="color:crimson">Adolescente resolve 3 Cubos Mágicos ao mesmo tempo e bate recorde mundial</b></h2>
