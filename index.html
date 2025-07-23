@@ -1,222 +1,91 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <title>Cubing Rocks</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="alternate" href="android-app://com.benkesmith.cubesmith/https/cubing.rocks/deeplink/" />
-    <link rel="alternate" href="android-app://com.benkesmith.cubesmith/https/cubing.rocks/deeplink/*" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <script src="assets/js/jquery_1.9.1_min.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <title>Cubing Rocks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    #main { display: block; }
+    body { font-family: Helvetica, Arial, sans-serif; }
+    h1 { color: crimson; }
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .embed-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    img { max-width: 100%; }
+    hr { margin: 30px 0; }
+  </style>
+</head>
+<body>
+  <div id="wrapper" class="blogconn_">
+    <section id="main">
+      <header>
+        <img src="img/news_top.png" alt="Rubik news" style="max-width:80%; width:300px"/>
+        <br><br>
+        <h1>Cubing Rocks!</h1>
+        <p>notícias, métodos, galeria</p>
+      </header>
+      <hr />
 
-    <style>
-      strong, b {
-        color: #003366;
-        font-weight: bold;
-        font-size: 1.2em;
-      }
-      div {
-        line-height: 1.4;
-        letter-spacing: 0px;
-        font-family: Helvetica, Arial;
-      }
-      .embed-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        max-width: 100%;
-      }
-      .embed-container iframe,
-      .embed-container object,
-      .embed-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      #main {
-        display: none;
-      }
-      #player-overlay {
-        max-width: 90%;
-        height: 100%;
-        box-sizing: border-box;
-        background-color: #000;
-        z-index: 999;
-      }
-    </style>
-
-    <script>
-      var idozito, last_id = 0, last_predimage = '', last_guiness = '';
-
-      function autoload() {
-        frissit(); // Inicia o carregamento sem enviar formulário
-      }
-
-      function frissit_video() {
-        randomtime = Math.random();
-      }
-
-      function frissit() {
-        clearTimeout(idozito);
-        $.ajax({
-          url: "https://cubing.press/img_src.php?uname=?&blogconn=",
-          dataType: 'json',
-          success: function(eredm) {
-            if (eredm.pred_id > last_id) {
-              last_id = eredm.pred_id;
-              last_predimage = eredm.pred_img;
-              randomtime = Math.random();
-              let frisskep_forras = eredm.filename != 'dummy'
-                ? 'gallery/' + eredm.filename + '.png?rnd=' + randomtime
-                : 'gallery/dummy.png?rnd=' + randomtime;
-
-              $('#blog_title').html(eredm.blog_title);
-              $('#blog_subtitle').html(eredm.blog_subtitle);
-              $('#article_title').html(eredm.article_title);
-              $('#article_before').html(eredm.article_before);
-              $('#article_after').html(eredm.article_after);
-
-              setTimeout(frissit_video, 15000);
-
-              setTimeout(function() {
-                $('#mixedcube').attr('src', frisskep_forras);
-                idozito = setTimeout(frissit, 5000);
-
-                if (eredm.guiness == "dummy") {
-                  $('#guiness_cube').attr('src', 'guiness/dummy.png');
-                } else {
-                  $('#guiness_cube').attr('src', 'guiness/' + eredm.guiness + '_' + eredm.pred_id + '.png');
-                }
-                last_guiness = eredm.guiness;
-              }, 500);
-            }
-          }
-        });
-      }
-    </script>
-  </head>
-
-  <body onload="autoload()">
-    <div id="wrapper" class="blogconn_">
-      <section id="main">
-        <header>
-          <img src="img/news_top.png" alt="Rubik news" style="max-width:80%; width:300px"/>
-          <br><br>
-          <h1 id="blog_title">Cubing Rocks!</h1>
-          <p id="blog_subtitle">notícias, métodos, galeria</p>
-        </header>
-        <hr />
-
-        <div style="text-align:left; text-transform:none">
-          <h2><b style="color:crimson">25 fatos incríveis sobre o Cubo Mágico</b></h2>
-          Listas com esse tipo de título são muito populares, especialmente no YouTube. Aqui está a nossa lista sobre nosso quebra-cabeça favorito.
-          <br><br>
-          <p align="center">
-            <div class='embed-container'>
-              <iframe src='https://www.youtube.com/embed/9aw0dI6v-NA' frameborder='0' allowfullscreen></iframe>
-            </div>
-          </p>
+      <div>
+        <h2><b style="color:crimson">25 fatos incríveis sobre o Cubo Mágico</b></h2>
+        Listas com esse tipo de título são populares, especialmente no YouTube. Aqui está a nossa lista sobre nosso quebra-cabeça favorito.<br><br>
+        <div class='embed-container'>
+          <iframe src='https://www.youtube.com/embed/9aw0dI6v-NA' frameborder='0' allowfullscreen></iframe>
         </div>
-        <hr />
-        <div style="text-align:left; text-transform:none">
-          <h2><b style="color:crimson">Empresa do Cubo perde marca registrada na UE</b></h2>
-          O Cubo Mágico recebeu a marca registrada da sua forma em 1999, mas em 2017 a proteção foi revogada.
-          <br><br>
-          <p align="center">
-            <img src="img/skynews-rubiks-cube_4814626.jpg" border="0" alt="" style="width:560px; max-width:100%; margin-left:auto; margin-right:auto;">
-          </p>
-          O Tribunal Geral da União Europeia manteve a decisão de remover a proteção. Segundo o tribunal: “Como as características essenciais da forma são necessárias para obter o resultado técnico da rotação, essa forma não pode ser registrada como marca”.
-          <br><br>
-          A Rubik’s Brand Ltd ainda pode apelar da decisão uma última vez.
-        </div>
-        <hr />
+      </div>
+      <hr />
 
-        <div style="text-align:left; text-transform:none">
-          <h2><b style="color:crimson" id="article_title">O fato mais incrível sobre o Cubo Mágico</b></h2>
-          <span id="article_before">
-            Que tal isso: se você misturar um cubo com pelo menos 20 movimentos, a chance de acabar com um padrão que <b>nunca existiu antes</b> é maior que <b>99.999999%</b>
-            <br><br>
-            O número de configurações possíveis de um Cubo Mágico é <b>acima de 43 quintilhões</b> (43.252.003.274.489.856.000). Isso significa que, se cada pessoa viva ganhasse 6 bilhões de cubos, cada um poderia misturá-los de um jeito que nenhum se repetiria no planeta.
-            <br><br>
-          </span>
-          <p id="bekezdes" align="center" style="color:#4e4e4e; font-size:0.9em; text-align:center;">
-            <img id="mixedcube" border="0" src="gallery/dummy.png?rnd=143556" alt="" style="max-height:450px; max-width:100%; margin-left:auto; margin-right:auto;">
-          </p>
-          <span id="article_after">
-            Em outras palavras: se você pegar um cubo e misturar com 20 movimentos, <b>NUNCA</b> vai obter o mesmo padrão mostrado acima.<br><br>E isso é certeza.
-          </span>
-        </div>
-        <hr />
+      <div>
+        <h2><b style="color:crimson">Empresa do Cubo perde marca registrada na UE</b></h2>
+        O Cubo Mágico recebeu a marca registrada da sua forma em 1999, mas em 2017 a proteção foi revogada.<br><br>
+        <img src="img/skynews-rubiks-cube_4814626.jpg" alt="" style="width:560px; max-width:100%; margin-left:auto; margin-right:auto;">
+        <br><br>
+        O Tribunal Geral da União Europeia manteve a decisão de remover a proteção.
+      </div>
+      <hr />
 
-        <div style="text-align:left; text-transform:none">
-          <h2><b style="color:crimson">Adolescente resolve 3 cubos ao mesmo tempo e bate recorde</b></h2>
-          Um adolescente que ficou famoso por resolver três cubos enquanto os joglava voltou com outro feito extraordinário. Que Jianyu, de Xiamen, China, quebrou o recorde mundial resolvendo três cubos simultaneamente, usando mãos e pés.
-          <br><br>
-          Um vídeo mostrando ele resolvendo os três cubos de uma vez já acumula mais de 40 mil visualizações desde que foi publicado na quinta-feira, junto com muitos comentários impressionados.
-          <br><br>
-          <p align="center">
-            <div class='embed-container'>
-              <iframe src='https://www.youtube.com/embed/XAoG6l2_Pqc' frameborder='0' allowfullscreen></iframe>
-            </div>
-          </p>
-          De acordo com o Guinness World Records, o jovem de 13 anos conseguiu resolver os três cubos em apenas 1 minuto e 36,39 segundos. Ele também quebrou outro recorde ao resolver um cubo pendurado de cabeça para baixo em apenas 15,84 segundos!
-        </div>
-        <hr />
-        <div style="text-align:left; text-transform:none">
-          <h2><b style="color:crimson">Maior Cubo Mágico do mundo — recorde mundial</b></h2>
-          O maior Cubo Mágico do mundo mede 2,022 m x 2,022 m x 2,022 m e foi construído por <b>Tony Fisher</b> (Reino Unido), em Ipswich, em 18 de novembro de 2019.
-          <br><br>
-          <p align="center">
-            <img id="guiness_cube" src="img/guiness.png?rnd=423075" border="0" alt="" style="width:500px; max-width:100%; margin-left:auto; margin-right:auto;">
-          </p>
-          Tony já havia conquistado esse recorde em 2016 com um cubo de 1,57 m de lado. Quando soube que seu recorde foi superado em 2018, ficou inicialmente decepcionado, mas também lisonjeado por ter inspirado outros a criarem algo tão impressionante.
-          <br><br>
-          Ele ganhou seu primeiro Cubo Mágico em 1980, aos 14 anos, e rapidamente se apaixonou pelo quebra-cabeça. Desde 2010, cria vídeos e puzzles em tempo integral.
-          <br><br>
-          O cubo gigante levou cerca de 330 horas para ser construído. Todas as camadas giram como num cubo comum, mas para girar uma face vertical, é preciso virar o cubo inteiro.
-          <br><br>
-          A parte mais difícil foi acertar a tensão das peças: o cubo precisava estar solto o bastante para girar, mas firme o suficiente para não desmontar. Ele usou molas grandes e parafusos para ajustar tudo.
-          <br><br>
-          Tony estima que o projeto custou cerca de £2000. Ele fez tudo sozinho, sem apoio externo.
-        </div>
-        <hr />
+      <div>
+        <h2><b style="color:crimson">O fato mais incrível sobre o Cubo Mágico</b></h2>
+        Se você misturar um cubo com pelo menos 20 movimentos, a chance de acabar com um padrão que <b>nunca existiu antes</b> é maior que <b>99.999999%</b>.<br><br>
+        <img src="gallery/dummy.png" alt="" style="max-height:450px; max-width:100%;">
+        <br><br>
+        São mais de <b>43 quintilhões</b> de possibilidades.
+      </div>
+      <hr />
 
-        <div style="text-align:left; text-transform:none">
-          <h2><b style="color:crimson">Mudanças no regulamento da World Cube Association</b></h2>
-          Recentemente, o comitê de regulamentos da World Cube Association fez alterações que entraram em vigor em 1º de janeiro de 2018.
-          <br><br>
-          Algumas das mudanças mais notáveis:
-          <ul>
-            <li>Cubos com qualquer tipo de logotipo estão proibidos em eventos de olhos vendados.</li>
-            <li>Competidores agora podem inspecionar o cubo com as mãos antes da resolução com os pés.</li>
-            <li>Agora é permitido usar qualquer cubo “pillowed”, não apenas o 7x7x7.</li>
-          </ul>
-          <br>
-          <p align="center">
-            <img src="img/2.jpg" border="0" alt="" style="width:560px; max-width:100%; margin-left:auto; margin-right:auto;">
-          </p>
-          Por exemplo, qualquer adesivo com logotipo pode invalidar a tentativa em uma prova de olhos vendados (DNF — Did Not Finish). Isso inclui logotipos impressos nos adesivos.
-          <br><br>
-          A fabricante Mofangge, produtora do Valk 3, chegou a oferecer gratuitamente uma tampa extra e adesivo branco para quem já comprou, para manter a legalidade nas provas.
-          <br><br>
-          Já em cubos sem adesivo (stickerless), onde o logo vem impresso diretamente no plástico, a situação é mais complicada.
+      <div>
+        <h2><b style="color:crimson">Adolescente resolve 3 cubos ao mesmo tempo</b></h2>
+        Que Jianyu, da China, quebrou o recorde resolvendo três cubos simultaneamente, usando mãos e pés.<br><br>
+        <div class='embed-container'>
+          <iframe src='https://www.youtube.com/embed/XAoG6l2_Pqc' frameborder='0' allowfullscreen></iframe>
         </div>
-        <hr />
-      </section>
-    </div>
+      </div>
+      <hr />
 
-    <!-- Scripts -->
-    <!--[if lte IE 8]><script src="assets/js/respond.min.js"></script><![endif]-->
-    <script>
-      if ('addEventListener' in window) {
-        window.addEventListener('load', function () {
-          document.body.className = document.body.className.replace(/\bis-loading\b/, '');
-        });
-        document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
-      }
-    </script>
-  </body>
+      <div>
+        <h2><b style="color:crimson">Maior Cubo Mágico do mundo — recorde mundial</b></h2>
+        O maior Cubo Mágico do mundo mede 2,022 m x 2,022 m x 2,022 m e foi construído por Tony Fisher, Reino Unido.<br><br>
+        <img src="img/guiness.png" style="width:500px; max-width:100%;" alt="">
+      </div>
+      <hr />
+
+      <div>
+        <h2><b style="color:crimson">Mudanças no regulamento da World Cube Association</b></h2>
+        Cubos com qualquer tipo de logotipo estão proibidos em eventos de olhos vendados.<br><br>
+        <img src="img/2.jpg" style="width:560px; max-width:100%;" alt="">
+      </div>
+      <hr />
+    </section>
+  </div>
+</body>
 </html>
